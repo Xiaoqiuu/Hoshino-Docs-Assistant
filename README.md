@@ -6,7 +6,7 @@
 
 一个功能强大的 AI 文档助手，支持多轮对话、RAG 文档问答、OCR 识别等功能。
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Electron](https://img.shields.io/badge/Electron-latest-47848F.svg)](https://www.electronjs.org/)
 [![React](https://img.shields.io/badge/React-18.3-61DAFB.svg)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6.svg)](https://www.typescriptlang.org/)
@@ -251,21 +251,6 @@ npm run package
 
 ## 📝 更新日志
 
-### v1.2.0 (2024-01-XX)
-- ✅ 添加 API 余额查询功能
-- ✅ 实现真正的多轮对话
-- ✅ 优化思维链交互体验
-
-### v1.1.0 (2024-01-XX)
-- ✅ 添加流式输出功能
-- ✅ 添加推理模型思维链展示
-- ✅ 优化 OCR 多语言支持
-
-### v1.0.0 (2024-01-XX)
-- ✅ 基础 AI 对话功能
-- ✅ RAG 文档问答
-- ✅ OCR 文字识别
-- ✅ 本地模型支持
 
 ## 🤝 贡献
 
@@ -273,7 +258,9 @@ npm run package
 
 ## 📄 许可证
 
-MIT License
+Apache License 2.0
+
+本项目采用 Apache 2.0 许可证。详见 [LICENSE](LICENSE) 文件。
 
 ## 🙏 致谢
 
