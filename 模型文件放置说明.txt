@@ -1,0 +1,163 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                        模型文件放置说明                                     ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+【目录结构】
+
+你的项目根目录
+│
+├── 双击我运行.bat
+├── package.json
+├── src/
+│   └── ...
+│
+└── .cache/                                    ← 创建这个文件夹
+    └── models/                                ← 创建这个文件夹
+        └── Xenova/                            ← 创建这个文件夹
+            └── all-MiniLM-L6-v2/              ← 创建这个文件夹
+                │
+                ├── config.json                ← 下载后放这里
+                ├── tokenizer.json             ← 下载后放这里
+                ├── tokenizer_config.json      ← 下载后放这里
+                │
+                └── onnx/                      ← 创建这个文件夹
+                    ├── model.onnx             ← 下载后放这里
+                    └── model_quantized.onnx   ← 下载后放这里
+
+
+【完整路径】
+
+假设你的项目在：
+C:\Users\xiaoqiuu\Documents\workspace-front\Hoshino-Document-LightProject
+
+那么文件应该放在：
+
+根目录文件：
+  C:\Users\xiaoqiuu\Documents\workspace-front\Hoshino-Document-LightProject\.cache\models\Xenova\all-MiniLM-L6-v2\config.json
+  C:\Users\xiaoqiuu\Documents\workspace-front\Hoshino-Document-LightProject\.cache\models\Xenova\all-MiniLM-L6-v2\tokenizer.json
+  C:\Users\xiaoqiuu\Documents\workspace-front\Hoshino-Document-LightProject\.cache\models\Xenova\all-MiniLM-L6-v2\tokenizer_config.json
+
+onnx 文件：
+  C:\Users\xiaoqiuu\Documents\workspace-front\Hoshino-Document-LightProject\.cache\models\Xenova\all-MiniLM-L6-v2\onnx\model.onnx
+  C:\Users\xiaoqiuu\Documents\workspace-front\Hoshino-Document-LightProject\.cache\models\Xenova\all-MiniLM-L6-v2\onnx\model_quantized.onnx
+
+
+【操作步骤】
+
+第 1 步：创建目录
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  双击运行 "创建模型目录.bat"
+  
+  或手动执行：
+  mkdir .cache\models\Xenova\all-MiniLM-L6-v2\onnx
+
+
+第 2 步：下载文件
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  访问：https://hf-mirror.com/Xenova/all-MiniLM-L6-v2/tree/main
+  
+  下载以下 5 个文件：
+  
+  ┌─────────────────────────┬──────────┬─────────────────────────────┐
+  │ 文件名                  │ 大小     │ 说明                        │
+  ├─────────────────────────┼──────────┼─────────────────────────────┤
+  │ config.json             │ ~612 B   │ 模型配置文件                │
+  │ tokenizer.json          │ ~466 KB  │ 分词器文件                  │
+  │ tokenizer_config.json   │ ~366 B   │ 分词器配置文件              │
+  │ onnx/model.onnx         │ ~90 MB   │ 主模型文件                  │
+  │ onnx/model_quantized... │ ~23 MB   │ 量化模型文件（可选）        │
+  └─────────────────────────┴──────────┴─────────────────────────────┘
+
+
+第 3 步：放置文件
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  将下载的文件按照以下方式放置：
+  
+  .cache\models\Xenova\all-MiniLM-L6-v2\
+  ├── config.json                    ← 放这里（3个文件）
+  ├── tokenizer.json                 ← 放这里
+  ├── tokenizer_config.json          ← 放这里
+  └── onnx\
+      ├── model.onnx                 ← 放这里（2个文件）
+      └── model_quantized.onnx       ← 放这里
+
+
+第 4 步：验证文件
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  双击运行 "验证模型文件.bat"
+  
+  确保所有文件都显示 ✓
+
+
+第 5 步：启动应用
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  双击运行 "双击我运行.bat"
+
+
+【快速下载链接】
+
+直接点击下载（使用镜像源）：
+
+1. config.json
+   https://hf-mirror.com/Xenova/all-MiniLM-L6-v2/resolve/main/config.json
+
+2. tokenizer.json
+   https://hf-mirror.com/Xenova/all-MiniLM-L6-v2/resolve/main/tokenizer.json
+
+3. tokenizer_config.json
+   https://hf-mirror.com/Xenova/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json
+
+4. model.onnx
+   https://hf-mirror.com/Xenova/all-MiniLM-L6-v2/resolve/main/onnx/model.onnx
+
+5. model_quantized.onnx
+   https://hf-mirror.com/Xenova/all-MiniLM-L6-v2/resolve/main/onnx/model_quantized.onnx
+
+
+【常见错误】
+
+❌ 错误 1：文件放错位置
+   正确：.cache\models\Xenova\all-MiniLM-L6-v2\config.json
+   错误：.cache\all-MiniLM-L6-v2\config.json
+
+❌ 错误 2：目录名称错误
+   正确：all-MiniLM-L6-v2
+   错误：all-minilm-l6-v2（大小写错误）
+
+❌ 错误 3：缺少 onnx 子目录
+   正确：.cache\models\Xenova\all-MiniLM-L6-v2\onnx\model.onnx
+   错误：.cache\models\Xenova\all-MiniLM-L6-v2\model.onnx
+
+❌ 错误 4：文件下载不完整
+   检查文件大小是否正确
+
+
+【检查清单】
+
+□ 已创建 .cache\models\Xenova\all-MiniLM-L6-v2 目录
+□ 已创建 .cache\models\Xenova\all-MiniLM-L6-v2\onnx 目录
+□ 已下载 config.json（~612 字节）
+□ 已下载 tokenizer.json（~466 KB）
+□ 已下载 tokenizer_config.json（~366 字节）
+□ 已下载 model.onnx（~90 MB）
+□ 已下载 model_quantized.onnx（~23 MB）
+□ 所有文件已放置在正确位置
+□ 已运行 "验证模型文件.bat" 确认
+
+
+【需要帮助？】
+
+查看详细文档：
+  - 手动下载模型指南.md
+  - 模型下载问题解决方案.md
+  - 故障排除指南.md
+
+运行辅助工具：
+  - 创建模型目录.bat
+  - 验证模型文件.bat
+  - 测试网络连接.bat
+
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║  提示：确保所有 5 个文件都下载完整并放在正确位置，否则模型无法加载！      ║
+╚════════════════════════════════════════════════════════════════════════════╝
