@@ -5,4 +5,14 @@ release
 *.log
 .env
 .env.local
+.env.example
 .cache
+
+# 用户数据和配置
+config.json
+hoshino-data.json
+vector-store.json
+
+# 用户数据目录
+%APPDATA%/hoshino-doc-assistant/
+~/.config/hoshino-doc-assistant/
