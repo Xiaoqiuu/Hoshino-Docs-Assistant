@@ -1,165 +1,294 @@
 # Hoshino 文档助手
 
-基于 Electron + React + TypeScript 构建的轻量级 AI 文档问答助手。
+<div align="center">
 
-## 功能特性
+![Hoshino](hoshino_icon.png)
 
-- 🚀 **全局快捷键唤出**: 按 `Ctrl+Alt+H` 随时唤出助手窗口
-- 💬 **双模式对话**: 
-  - 普通聊天模式：与 AI 自由对话
-  - 文档模式：基于选中文本进行 RAG 问答
-- 🤖 **多种 AI 模型支持**:
-  - 云端模型：DeepSeek API（需要 API Key）
-  - 本地模型：通过 Ollama 运行 DeepSeek-R1、Qwen 等开源模型
-- 📸 **OCR 图片识别**: 粘贴截图自动识别文字内容（支持中英文）
-- 🎨 **现代化 UI**: 简洁美观的粉色主题设计
-- 📝 **Markdown 渲染**: 支持数学公式（KaTeX）和代码高亮
-- 💾 **会话管理**: 自动保存对话历史，支持会话切换
-- 🔒 **后台常驻**: 系统托盘常驻，资源占用低
-- ⚡ **快速响应**: 毫秒级窗口唤出
+一个功能强大的 AI 文档助手，支持多轮对话、RAG 文档问答、OCR 识别等功能。
 
-## 技术栈
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Electron](https://img.shields.io/badge/Electron-latest-47848F.svg)](https://www.electronjs.org/)
+[![React](https://img.shields.io/badge/React-18.3-61DAFB.svg)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6.svg)](https://www.typescriptlang.org/)
 
-- **Electron**: 跨平台桌面应用框架
-- **React 18**: 现代化 UI 框架
-- **TypeScript**: 类型安全
-- **Vite**: 快速构建工具
+</div>
 
-## 快速开始
+## ✨ 核心功能
 
-### 安装依赖
+### 🤖 AI 对话
+- **多轮对话**：自动保持上下文，支持连续追问
+- **流式输出**：打字机效果，实时显示 AI 回复
+- **思维链展示**：支持 DeepSeek Reasoner/R1 推理模型的思考过程可视化
+- **双模式支持**：云端 API（DeepSeek）+ 本地模型（Ollama）
 
-项目支持 npm 或 pnpm：
+### 📚 RAG 文档问答
+- **文档上传**：支持 PDF、TXT、Markdown 等格式
+- **向量检索**：基于语义的智能文档检索
+- **上下文问答**：基于文档内容的精准回答
+- **文档管理**：文档库管理、查看、删除
+
+### 🔍 OCR 文字识别
+- **多语言支持**：中文、日语、韩语、英语等 10+ 种语言
+- **剪贴板识别**：一键识别剪贴板图片
+- **自定义语言**：可选择特定语言提高准确度
+
+### 💰 其他功能
+- **API 余额查询**：实时查看 DeepSeek API 余额
+- **会话管理**：多会话支持，历史记录保存
+- **Markdown 渲染**：支持数学公式、代码高亮
+- **本地模型管理**：Ollama 集成，自动下载和管理
+
+## 🚀 快速开始
+
+### 环境要求
+
+- Node.js 16+
+- npm 或 cnpm
+
+### 安装
 
 ```bash
-# 使用 npm
-npm install
+# 克隆仓库
+git clone https://github.com/Xiaoqiuu/Hoshino-Docs-Assistant.git
+cd Hoshino-Docs-Assistant
 
-# 或使用 pnpm（推荐）
-pnpm install
+# 安装依赖
+npm install
+# 或使用 cnpm
+cnpm install
+
+# 启动开发环境
+npm run dev
 ```
 
-> 注意：如果使用 pnpm，项目已配置 `.npmrc` 来正确处理 Electron 的依赖结构。
+### 快速运行
+
+**Windows 用户**：直接双击 `双击我运行.bat` 即可启动应用。
+
+### 配置
+
+1. **云端模式（DeepSeek API）**
+   - 获取 API Key：https://platform.deepseek.com
+   - 在设置中输入 API Key
+   - 选择模型：`deepseek-chat` 或 `deepseek-reasoner`
+
+2. **本地模式（Ollama）**
+   - 安装 Ollama：https://ollama.com
+   - 下载模型：`ollama pull deepseek-r1:7b`
+   - 在设置中启用"使用本地模型"
+
+## 📖 使用指南
+
+### 基础对话
+
+1. 启动应用
+2. 在输入框输入问题
+3. 按 Enter 或点击发送
+4. 查看 AI 回复
+
+### RAG 文档问答
+
+1. 点击"文档库"按钮
+2. 上传文档（PDF/TXT/MD）
+3. 等待文档处理完成
+4. 选中文档内容后提问
+5. AI 会基于文档内容回答
+
+### OCR 识别
+
+1. 复制图片到剪贴板
+2. 点击 OCR 按钮
+3. 选择识别语言（可选）
+4. 查看识别结果
+
+### 推理模型使用
+
+1. 选择 `deepseek-reasoner` 模型
+2. 启用"显示思维链内容"
+3. 发送需要推理的问题
+4. 查看思考过程和最终答案
+
+## 🛠️ 技术栈
+
+### 前端
+- **框架**：React 18 + TypeScript
+- **构建工具**：Vite
+- **UI 组件**：自定义组件
+- **Markdown**：react-markdown + KaTeX
+- **代码高亮**：react-syntax-highlighter
+
+### 后端
+- **运行时**：Electron
+- **AI SDK**：OpenAI SDK
+- **OCR**：Tesseract.js
+- **向量数据库**：本地 JSON 存储
+- **嵌入模型**：Xenova/transformers.js
+
+### 核心服务
+- `aiService`：AI 对话服务
+- `ragService`：RAG 文档问答
+- `ocrService`：OCR 识别
+- `ollamaService`：本地模型管理
+- `databaseService`：数据持久化
+
+## 📁 项目结构
+
+```
+Hoshino-Docs-Assistant/
+├── src/
+│   ├── main/              # 主进程
+│   │   ├── main.ts        # 入口文件
+│   │   ├── preload.ts     # 预加载脚本
+│   │   ├── services/      # 核心服务
+│   │   └── types.d.ts     # 类型定义
+│   └── renderer/          # 渲染进程
+│       ├── App.tsx        # 主应用
+│       ├── Settings.tsx   # 设置界面
+│       └── components/    # UI 组件
+├── docs/                  # 文档目录
+├── .env.example          # 环境变量示例
+├── package.json          # 项目配置
+├── tsconfig.json         # TS 配置
+├── vite.config.ts        # Vite 配置
+└── 双击我运行.bat        # 快速启动脚本
+```
+
+## 🎯 核心特性详解
+
+### 多轮对话
+
+应用自动保存对话历史，每次发送消息时会将历史上下文一起发送给 AI，实现真正的多轮对话。
+
+```typescript
+// 自动构建消息历史
+const messageHistory = messages.map(msg => ({
+  role: msg.role,
+  content: msg.content
+}));
+
+// 发送时包含历史
+await sendMessage(currentMessage, undefined, messageHistory);
+```
+
+### 流式输出
+
+支持打字机效果的流式输出，提供更好的用户体验。
+
+- 思考阶段：自动展开思维链，实时显示思考过程
+- 回复阶段：自动折叠思维链，逐字显示回复内容
+
+### RAG 文档问答
+
+基于向量检索的文档问答系统：
+
+1. 文档分块：将文档切分为语义块
+2. 向量化：使用嵌入模型生成向量
+3. 存储：保存到本地向量数据库
+4. 检索：根据问题检索相关文档块
+5. 回答：基于检索结果生成答案
+
+### OCR 多语言支持
+
+支持 10+ 种语言的 OCR 识别：
+
+- 简体中文 (chi_sim)
+- 繁体中文 (chi_tra)
+- 日语 (jpn)
+- 韩语 (kor)
+- 英语 (eng)
+- 法语 (fra)
+- 德语 (deu)
+- 西班牙语 (spa)
+- 俄语 (rus)
+- 阿拉伯语 (ara)
+
+## ⚙️ 配置选项
+
+### 云端模式配置
+
+```typescript
+{
+  localMode: false,
+  apiKey: "sk-xxx",
+  baseUrl: "https://api.deepseek.com",
+  modelName: "deepseek-chat", // 或 "deepseek-reasoner"
+  streamOutput: true,
+  showReasoningContent: true
+}
+```
+
+### 本地模式配置
+
+```typescript
+{
+  localMode: true,
+  ollamaUrl: "http://localhost:11434",
+  ollamaModel: "deepseek-r1:7b",
+  streamOutput: true,
+  showReasoningContent: true
+}
+```
+
+## 🔧 开发
 
 ### 开发模式
 
-**方式 1: 使用启动脚本（推荐）**
-
-Windows 批处理：
 ```bash
-dev.bat
+npm run dev
 ```
 
-或 PowerShell：
-```bash
-.\dev.ps1
-```
-
-**方式 2: 手动分步启动**
-
-终端 1 - 启动 Vite：
-```bash
-npm run dev:renderer
-```
-
-终端 2 - 启动 Electron（等待 Vite 启动后）：
-```bash
-npm run build:main
-set NODE_ENV=development
-electron .
-```
-
-这会启动 Vite 开发服务器（端口 5173）和 Electron 应用。
-
-### 构建应用
+### 构建
 
 ```bash
 npm run build
 ```
 
-### 打包发布
+### 打包
 
 ```bash
 npm run package
 ```
 
-## 项目结构
+## 📝 更新日志
 
-```
-hoshino-doc-assistant/
-├── src/
-│   ├── main/              # Electron 主进程
-│   │   ├── main.ts        # 主进程入口
-│   │   └── preload.ts     # 预加载脚本
-│   └── renderer/          # React 渲染进程
-│       ├── App.tsx        # 主应用组件
-│       ├── App.css        # 样式
-│       ├── main.tsx       # React 入口
-│       └── index.html     # HTML 模板
-├── dist/                  # 构建输出
-├── package.json
-├── tsconfig.json
-└── vite.config.ts
-```
+### v1.2.0 (2024-01-XX)
+- ✅ 添加 API 余额查询功能
+- ✅ 实现真正的多轮对话
+- ✅ 优化思维链交互体验
 
-## 使用说明
+### v1.1.0 (2024-01-XX)
+- ✅ 添加流式输出功能
+- ✅ 添加推理模型思维链展示
+- ✅ 优化 OCR 多语言支持
 
-### 基础使用
+### v1.0.0 (2024-01-XX)
+- ✅ 基础 AI 对话功能
+- ✅ RAG 文档问答
+- ✅ OCR 文字识别
+- ✅ 本地模型支持
 
-1. 启动应用后，会在系统托盘显示图标
-2. 按 `Ctrl+Alt+H` 唤出助手窗口
-3. 点击右上角 ⚙️ 进入设置
-4. 选择使用云端模型或本地模型
+## 🤝 贡献
 
-### 云端模型配置
+欢迎提交 Issue 和 Pull Request！
 
-1. 在设置中输入 DeepSeek API Key
-2. 访问 [platform.deepseek.com](https://platform.deepseek.com) 获取 API Key
-3. 测试连接确认配置正确
+## 📄 许可证
 
-### 本地模型配置（推荐）
+MIT License
 
-使用 Ollama 运行本地模型，完全免费且保护隐私：
+## 🙏 致谢
 
-1. 安装 Ollama：访问 [ollama.com](https://ollama.com)
-2. 启动服务：`ollama serve`
-3. 下载模型：`ollama pull deepseek-r1:7b`
-4. 在设置中勾选"使用本地模型"
-5. 测试连接确认配置正确
+- [DeepSeek](https://www.deepseek.com/) - AI 模型提供
+- [Ollama](https://ollama.com/) - 本地模型运行时
+- [Tesseract.js](https://tesseract.projectnaptha.com/) - OCR 引擎
+- [Electron](https://www.electronjs.org/) - 桌面应用框架
 
-详细说明请查看 [OLLAMA_LOCAL_MODEL.md](./OLLAMA_LOCAL_MODEL.md)
+## 📮 联系方式
 
-### 对话模式
+- GitHub: [@Xiaoqiuu](https://github.com/Xiaoqiuu)
+- 项目地址: https://github.com/Xiaoqiuu/Hoshino-Docs-Assistant
 
-- **普通聊天**：直接输入问题进行对话
-- **文档模式**：选中文本后唤出窗口，基于文本内容问答
-- **图片识别**：粘贴截图到输入框，自动识别图片中的文字
+---
 
-## 后续开发计划
-
-### 已完成功能 ✅
-- [x] 基础 Electron + React 架构
-- [x] 全局快捷键支持
-- [x] 双模式 UI 界面
-- [x] 集成 DeepSeek API
-- [x] 本地模型支持（Ollama）
-- [x] OCR 图片识别（Tesseract.js）
-- [x] 设置面板（API 配置）
-- [x] 会话历史管理
-- [x] Markdown 渲染（数学公式 + 代码高亮）
-- [x] 粉色主题 UI 设计
-- [x] 系统选中文本获取
-
-### 计划中功能 🚧
-- [ ] 实现文档解析（PDF/DOCX）
-- [ ] 实现 RAG 检索增强
-- [ ] 浏览器扩展集成
-- [ ] 向量数据库集成（FAISS/Chroma）
-- [ ] 文档跳转功能
-- [ ] 多文档跨文档检索
-- [ ] 图表理解
-- [ ] OCR 多语言支持优化
-
-## 许可证
-
-MIT
+<div align="center">
+Made with ❤️ by Xiaoqiuu
+</div>
